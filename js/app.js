@@ -51,7 +51,7 @@ function updateThemeIcon(theme) {
   }
 }
 
-// NAVBAR PROGRESS
+// NAVBAR & DRAWER PROGRESS
 function updateNavProgress() {
   const percentage = window.AcademyStorage.getProgressPercentage();
   const fill = document.getElementById('nav-progress-fill');
@@ -59,14 +59,49 @@ function updateNavProgress() {
 
   if (fill) fill.style.width = `${percentage}%`;
   if (text) text.innerText = `${percentage}%`;
+
+  // Sync Drawer Progress
+  const drawerFill = document.getElementById('drawer-progress-fill');
+  const drawerText = document.getElementById('drawer-progress-text');
+  if (drawerFill) drawerFill.style.width = `${percentage}%`;
+  if (drawerText) drawerText.innerText = `${percentage}% Selesai`;
 }
 
-// MOBILE MENU TOGGLE
-window.toggleMobileNav = function() {
-  const links = document.getElementById('nav-links');
-  if (links) {
-    links.classList.toggle('open');
+// MOBILE DRAWER CONTROLS (iOS Sheet & Android Drawer)
+window.openMobileDrawer = function() {
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  if (drawer && backdrop) {
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
   }
+};
+
+window.closeMobileDrawer = function() {
+  const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  if (drawer && backdrop) {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};
+
+// UPDATE BOTTOM NAVIGATION ACTIVE STATE
+window.updateBottomNav = function(path) {
+  document.querySelectorAll('.bottom-nav-item').forEach(item => {
+    const itemPath = item.getAttribute('data-path');
+    if (!itemPath) return;
+
+    if (itemPath === '/' && (path === '/' || path === '')) {
+      item.classList.add('active');
+    } else if (itemPath !== '/' && path.startsWith(itemPath)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
 };
 
 // GLOBAL SEARCH MODAL

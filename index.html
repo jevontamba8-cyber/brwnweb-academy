@@ -2,7 +2,10 @@
 <html lang="id" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="brwnweb Academy" />
   <title>brwnweb Academy - Platform Edukasi Web, Pemrograman & Aplikasi</title>
   
   <!-- SEO Meta Tags -->
@@ -79,7 +82,7 @@
         </button>
 
         <!-- Mobile Drawer Toggle -->
-        <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle Navigation Menu">
+        <button class="mobile-nav-toggle" onclick="openMobileDrawer()" aria-label="Toggle Navigation Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -165,6 +168,96 @@
 
   <!-- TOAST CONTAINER -->
   <div id="toast-container" class="toast-container"></div>
+
+  <!-- MOBILE BOTTOM NAVIGATION (iOS & Android App-like Experience) -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
+    <a href="#/" class="bottom-nav-item" data-path="/">
+      <i class="fa-solid fa-house"></i>
+      <span>Beranda</span>
+    </a>
+    <a href="#/roadmap" class="bottom-nav-item" data-path="/roadmap">
+      <i class="fa-solid fa-compass"></i>
+      <span>Roadmap</span>
+    </a>
+    <a href="#/materi" class="bottom-nav-item" data-path="/materi">
+      <i class="fa-solid fa-book-open"></i>
+      <span>Materi</span>
+    </a>
+    <a href="#/playground" class="bottom-nav-item" data-path="/playground">
+      <i class="fa-solid fa-terminal"></i>
+      <span>Sandbox</span>
+    </a>
+    <button type="button" class="bottom-nav-item" onclick="openMobileDrawer()" aria-label="Buka Menu Lengkap">
+      <i class="fa-solid fa-bars-staggered"></i>
+      <span>Menu</span>
+    </button>
+  </nav>
+
+  <!-- MOBILE SLIDE-OVER DRAWER -->
+  <div id="mobile-drawer-backdrop" class="mobile-drawer-backdrop" onclick="closeMobileDrawer()"></div>
+  <aside id="mobile-drawer" class="mobile-drawer" aria-label="Menu Utama Mobile">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="assets/logo.jpg" alt="Logo" class="drawer-logo" />
+        <div>
+          <div class="drawer-title">brwnweb <span>Academy</span></div>
+          <div class="drawer-sub">Mobile Learning Suite</div>
+        </div>
+      </div>
+      <button class="btn-icon drawer-close-btn" onclick="closeMobileDrawer()" aria-label="Tutup Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Progress Card in Drawer -->
+    <div class="drawer-progress-card">
+      <div class="drawer-progress-label">
+        <span>Progress Belajar</span>
+        <strong id="drawer-progress-text">0% Selesai</strong>
+      </div>
+      <div class="drawer-progress-bar">
+        <div id="drawer-progress-fill" class="drawer-progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="drawer-quick-actions">
+      <button class="btn btn-sm btn-secondary" onclick="closeMobileDrawer(); openSearchModal();" style="flex:1;">
+        <i class="fa-solid fa-magnifying-glass"></i> Cari
+      </button>
+      <button class="btn btn-sm btn-secondary" onclick="toggleTheme()" style="flex:1;">
+        <i class="fa-solid fa-circle-half-stroke"></i> Ganti Tema
+      </button>
+    </div>
+
+    <!-- Navigation List -->
+    <div class="drawer-nav-sections">
+      <div class="drawer-section-label">Jalur Inti</div>
+      <ul class="drawer-nav-list">
+        <li><a href="#/" onclick="closeMobileDrawer()"><i class="fa-solid fa-house"></i> Beranda Utama</a></li>
+        <li><a href="#/roadmap" onclick="closeMobileDrawer()"><i class="fa-solid fa-compass"></i> Roadmap 10 Level</a></li>
+        <li><a href="#/materi" onclick="closeMobileDrawer()"><i class="fa-solid fa-book-open"></i> Koleksi Materi Lengkap</a></li>
+        <li><a href="#/playground" onclick="closeMobileDrawer()"><i class="fa-solid fa-terminal"></i> Live Code Playground</a></li>
+      </ul>
+
+      <div class="drawer-section-label">Spesialisasi & Praktik</div>
+      <ul class="drawer-nav-list">
+        <li><a href="#/bahasa-pemrograman" onclick="closeMobileDrawer()"><i class="fa-solid fa-code"></i> Bahasa & Stack</a></li>
+        <li><a href="#/tools" onclick="closeMobileDrawer()"><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Editor</a></li>
+        <li><a href="#/database" onclick="closeMobileDrawer()"><i class="fa-solid fa-database"></i> Database & ERD</a></li>
+        <li><a href="#/projects" onclick="closeMobileDrawer()"><i class="fa-solid fa-rocket"></i> 15+ Proyek Riil</a></li>
+        <li><a href="#/website-development" onclick="closeMobileDrawer()"><i class="fa-solid fa-laptop-code"></i> Tutorial Web dari Nol</a></li>
+        <li><a href="#/app-development" onclick="closeMobileDrawer()"><i class="fa-solid fa-mobile-screen-button"></i> Mobile & PWA</a></li>
+        <li><a href="#/hosting" onclick="closeMobileDrawer()"><i class="fa-solid fa-cloud-arrow-up"></i> Hosting & Deployment</a></li>
+      </ul>
+
+      <div class="drawer-section-label">Platform</div>
+      <ul class="drawer-nav-list">
+        <li><a href="#/glossary" onclick="closeMobileDrawer()"><i class="fa-solid fa-font"></i> Glosarium Istilah A-Z</a></li>
+        <li><a href="#/about" onclick="closeMobileDrawer()"><i class="fa-solid fa-circle-info"></i> Tentang & Masukan</a></li>
+      </ul>
+    </div>
+  </aside>
 
   <!-- APPLICATION SCRIPTS -->
   <script src="js/data.js"></script>

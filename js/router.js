@@ -33,6 +33,11 @@ window.AcademyRouter = {
       }
     });
 
+    // Update mobile bottom nav
+    if (window.updateBottomNav) {
+      window.updateBottomNav(path);
+    }
+
     const appRoot = document.getElementById('app-root');
     if (!appRoot) return;
 
