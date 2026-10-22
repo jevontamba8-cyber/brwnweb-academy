@@ -242,3 +242,28 @@ window.showToast = function(message, type = 'info') {
     setTimeout(() => toast.remove(), 300);
   }, 3200);
 };
+
+// WHATSAPP CONSULTATION HELPERS
+window.copyPhoneNumber = function(number, name) {
+  navigator.clipboard.writeText(number).then(() => {
+    window.showToast(`Nomor WhatsApp ${name} (${number}) berhasil disalin!`, 'success');
+  }).catch(() => {
+    window.showToast(`Nomor WhatsApp: ${number}`, 'info');
+  });
+};
+
+window.openWhatsAppModal = function() {
+  const modal = document.getElementById('wa-modal-backdrop');
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeWhatsAppModal = function() {
+  const modal = document.getElementById('wa-modal-backdrop');
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};

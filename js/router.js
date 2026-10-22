@@ -335,6 +335,48 @@ window.AcademyRouter = {
           </div>
         </div>
       </section>
+
+      <!-- WHATSAPP CONSULTATION SECTION (MASIH BINGUNG?) -->
+      <section class="section-wrapper" style="background: var(--bg-secondary);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Layanan Konsultasi WhatsApp</span>
+            <h2 class="section-title">Masih Bingung? Konsultasikan Bersama Kami</h2>
+            <p class="section-desc">Punya pertanyaan seputar roadmap belajar, kendala coding, atau konsultasi pembuatan website & aplikasi? Tim konsultan BRWNWEB siap membantu Anda secara langsung via WhatsApp.</p>
+          </div>
+
+          <div class="consultants-grid">
+            ${(window.ACADEMY_DATA.consultants || []).map(c => `
+              <div class="consultant-card">
+                <div class="consultant-header">
+                  <div class="consultant-avatar">${c.initials}</div>
+                  <div class="consultant-info">
+                    <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                      <h3 class="consultant-name">${c.name}</h3>
+                      <span class="badge ${c.badge === 'Utama' ? 'badge-warning' : 'badge-outline'}">${c.badge}</span>
+                    </div>
+                    <div class="consultant-role">${c.role}</div>
+                  </div>
+                </div>
+
+                <div class="consultant-phone">
+                  <i class="fa-solid fa-phone" style="color:var(--accent-primary);"></i>
+                  <span>${c.phone}</span>
+                </div>
+
+                <div class="consultant-actions">
+                  <a href="${c.waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                  </a>
+                  <button type="button" class="btn btn-secondary btn-copy-wa" onclick="copyPhoneNumber('${c.rawPhone}', '${c.name}')" title="Salin nomor WhatsApp ${c.name}">
+                    <i class="fa-regular fa-copy"></i> Salin Nomor
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </section>
     `;
 
     // Mount playground on home page
@@ -1271,6 +1313,46 @@ window.AcademyRouter = {
                 <i class="fa-solid fa-paper-plane"></i> Kirim Masukan
               </button>
             </form>
+          </div>
+        </div>
+
+        <!-- WHATSAPP CONSULTATION CARDS IN ABOUT PAGE -->
+        <div style="margin-top:2rem; padding-top:3rem; border-top:1px solid var(--border-color);">
+          <div class="section-header" style="margin-bottom:2.5rem;">
+            <span class="section-tag"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Layanan Konsultasi & Bantuan</span>
+            <h2 class="section-title">Hubungi Tim Konsultan BRWNWEB</h2>
+            <p class="section-desc">Butuh bimbingan langsung, diskusi materi belajar, atau konsultasi proyek website Anda? Silakan hubungi konsultan kami melalui WhatsApp berikut:</p>
+          </div>
+
+          <div class="consultants-grid">
+            ${(window.ACADEMY_DATA.consultants || []).map(c => `
+              <div class="consultant-card">
+                <div class="consultant-header">
+                  <div class="consultant-avatar">${c.initials}</div>
+                  <div class="consultant-info">
+                    <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                      <h3 class="consultant-name">${c.name}</h3>
+                      <span class="badge ${c.badge === 'Utama' ? 'badge-warning' : 'badge-outline'}">${c.badge}</span>
+                    </div>
+                    <div class="consultant-role">${c.role}</div>
+                  </div>
+                </div>
+
+                <div class="consultant-phone">
+                  <i class="fa-solid fa-phone" style="color:var(--accent-primary);"></i>
+                  <span>${c.phone}</span>
+                </div>
+
+                <div class="consultant-actions">
+                  <a href="${c.waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-wa">
+                    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+                  </a>
+                  <button type="button" class="btn btn-secondary btn-copy-wa" onclick="copyPhoneNumber('${c.rawPhone}', '${c.name}')" title="Salin nomor WhatsApp ${c.name}">
+                    <i class="fa-regular fa-copy"></i> Salin Nomor
+                  </button>
+                </div>
+              </div>
+            `).join('')}
           </div>
         </div>
       </div>

@@ -20,6 +20,40 @@ window.ACADEMY_DATA = {
     { label: "Akses Belajar", value: "100%", suffix: " Gratis" }
   ],
 
+  // KONSULTAN WHATSAPP BRWNWEB
+  consultants: [
+    {
+      id: "jevon",
+      name: "Jevon",
+      role: "Konsultan Utama BRWNWEB",
+      phone: "+62 812-8532-4814",
+      rawPhone: "+6281285324814",
+      initials: "JV",
+      waLink: "https://wa.me/6281285324814?text=Halo%20kak%20Jevon,%20saya%20mau%20konsultasi%20pembuatan%20website",
+      badge: "Utama"
+    },
+    {
+      id: "amoz",
+      name: "Amoz",
+      role: "Tim Konsultasi BRWNWEB",
+      phone: "+62 813-1609-8209",
+      rawPhone: "+6281316098209",
+      initials: "AM",
+      waLink: "https://wa.me/6281316098209?text=Halo%20kak%20Amoz,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB",
+      badge: "Tim Konsultan"
+    },
+    {
+      id: "tamara",
+      name: "Tamara",
+      role: "Tim Konsultasi BRWNWEB",
+      phone: "+62 857-8222-8570",
+      rawPhone: "+6285782228570",
+      initials: "TM",
+      waLink: "https://wa.me/6285782228570?text=Halo%20kak%20Tamara,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB",
+      badge: "Tim Konsultan"
+    }
+  ],
+
   // 2. WEB ARCHITECTURE STEPS (INTERACTIVE DIAGRAM)
   webArchitectureSteps: [
     {

@@ -1663,3 +1663,201 @@
   transform: translateX(4px);
 }
 
+/* ==========================================================================
+   16. WHATSAPP CONSULTATION CARDS & FLOATING WIDGET
+   ========================================================================== */
+.consultants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.consultant-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultant-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #25D366, #E08D46);
+  opacity: 0.8;
+}
+
+.consultant-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(37, 211, 102, 0.15);
+}
+
+.consultant-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.consultant-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 12px var(--accent-glow);
+  flex-shrink: 0;
+}
+
+.consultant-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.consultant-role {
+  font-size: 0.82rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.consultant-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.consultant-actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.btn-wa {
+  background: #25D366;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 700;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-wa:hover {
+  background: #20BD5A;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-copy-wa {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.btn-copy-wa:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.floating-wa-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  z-index: 1100;
+  transition: all var(--transition-normal);
+}
+
+.floating-wa-btn i {
+  font-size: 1.35rem;
+}
+
+.floating-wa-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
+}
+
+.floating-wa-btn:active {
+  transform: scale(0.96);
+}
+
+/* WHATSAPP MODAL CARD */
+.consultant-modal-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.15rem;
+  transition: all var(--transition-fast);
+}
+
+.consultant-modal-card:hover {
+  border-color: var(--border-highlight);
+  background: var(--bg-tertiary);
+}
+
+@media (max-width: 768px) {
+  .floating-wa-btn {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    right: 1rem;
+    padding: 0.65rem 0.95rem;
+    font-size: 0.82rem;
+  }
+
+  .floating-wa-label {
+    display: none;
+  }
+
+  .floating-wa-btn i {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .consultants-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

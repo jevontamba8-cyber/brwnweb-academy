@@ -166,6 +166,100 @@
     </div>
   </div>
 
+  <!-- WHATSAPP CONSULTATION MODAL -->
+  <div id="wa-modal-backdrop" class="modal-backdrop" onclick="if(event.target === this) closeWhatsAppModal()">
+    <div class="search-modal-box wa-modal-box">
+      <div class="search-modal-header" style="background: linear-gradient(135deg, #1C110A 0%, #2A170E 100%);">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:1.6rem;"></i>
+          <div>
+            <h3 style="font-size:1.15rem; color:var(--text-primary); margin:0;">Konsultasi BRWNWEB</h3>
+            <span style="font-size:0.78rem; color:var(--text-muted);">Pilih konsultan untuk memulai chat via WhatsApp</span>
+          </div>
+        </div>
+        <button class="btn btn-sm btn-secondary" onclick="closeWhatsAppModal()" style="padding:0.3rem 0.6rem;">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div style="padding:1.25rem; display:flex; flex-direction:column; gap:1rem; max-height:75vh; overflow-y:auto;">
+        <!-- Jevon -->
+        <div class="consultant-modal-card">
+          <div style="display:flex; align-items:center; gap:0.85rem;">
+            <div class="consultant-avatar">JV</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                <strong>Jevon</strong>
+                <span class="badge badge-warning" style="font-size:0.65rem;">Utama</span>
+              </div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">Konsultan Utama BRWNWEB</div>
+              <div style="font-size:0.85rem; color:var(--accent-gold); font-family:var(--font-mono); margin-top:0.2rem;">+62 812-8532-4814</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; margin-top:0.85rem;">
+            <a href="https://wa.me/6281285324814?text=Halo%20kak%20Jevon,%20saya%20mau%20konsultasi%20pembuatan%20website" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-wa" style="flex:1;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="copyPhoneNumber('+6281285324814', 'Jevon')">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+
+        <!-- Amoz -->
+        <div class="consultant-modal-card">
+          <div style="display:flex; align-items:center; gap:0.85rem;">
+            <div class="consultant-avatar">AM</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                <strong>Amoz</strong>
+                <span class="badge badge-outline" style="font-size:0.65rem;">Tim Konsultan</span>
+              </div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">Tim Konsultasi BRWNWEB</div>
+              <div style="font-size:0.85rem; color:var(--accent-gold); font-family:var(--font-mono); margin-top:0.2rem;">+62 813-1609-8209</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; margin-top:0.85rem;">
+            <a href="https://wa.me/6281316098209?text=Halo%20kak%20Amoz,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-wa" style="flex:1;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="copyPhoneNumber('+6281316098209', 'Amoz')">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+
+        <!-- Tamara -->
+        <div class="consultant-modal-card">
+          <div style="display:flex; align-items:center; gap:0.85rem;">
+            <div class="consultant-avatar">TM</div>
+            <div>
+              <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+                <strong>Tamara</strong>
+                <span class="badge badge-outline" style="font-size:0.65rem;">Tim Konsultan</span>
+              </div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">Tim Konsultasi BRWNWEB</div>
+              <div style="font-size:0.85rem; color:var(--accent-gold); font-family:var(--font-mono); margin-top:0.2rem;">+62 857-8222-8570</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.5rem; margin-top:0.85rem;">
+            <a href="https://wa.me/6285782228570?text=Halo%20kak%20Tamara,%20saya%20mau%20konsultasi%20dengan%20BRWNWEB" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-wa" style="flex:1;">
+              <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+            </a>
+            <button type="button" class="btn btn-sm btn-secondary" onclick="copyPhoneNumber('+6285782228570', 'Tamara')">
+              <i class="fa-regular fa-copy"></i> Salin Nomor
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP TRIGGER BUTTON -->
+  <button type="button" class="floating-wa-btn" onclick="openWhatsAppModal()" aria-label="Konsultasi WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-wa-label">Tanya Konsultan</span>
+  </button>
+
   <!-- TOAST CONTAINER -->
   <div id="toast-container" class="toast-container"></div>
 
@@ -226,7 +320,10 @@
         <i class="fa-solid fa-magnifying-glass"></i> Cari
       </button>
       <button class="btn btn-sm btn-secondary" onclick="toggleTheme()" style="flex:1;">
-        <i class="fa-solid fa-circle-half-stroke"></i> Ganti Tema
+        <i class="fa-solid fa-circle-half-stroke"></i> Tema
+      </button>
+      <button class="btn btn-sm btn-wa" onclick="closeMobileDrawer(); openWhatsAppModal();" style="flex:1;">
+        <i class="fa-brands fa-whatsapp"></i> WA
       </button>
     </div>
 
