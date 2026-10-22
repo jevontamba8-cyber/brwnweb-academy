@@ -1,0 +1,12 @@
+# Ignore PDF files as requested
+*.pdf
+Prompt_WebVerse_Academy.pdf
+
+# Logs & temp
+*.log
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+.vercel

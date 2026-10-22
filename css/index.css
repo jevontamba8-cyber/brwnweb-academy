@@ -1,0 +1,231 @@
+/* ==========================================================================
+   BRWNWEB ACADEMY - DESIGN SYSTEM & BASE STYLES
+   Color Palette: Warm Espresso, Mocha, Amber Gold, Biscuit Cream
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* DARK THEME (DEFAULT) - Deep Espresso & Amber Glow */
+  --bg-primary: #120A06;
+  --bg-secondary: #1C110A;
+  --bg-tertiary: #271810;
+  --bg-elevated: #332015;
+  --bg-card: rgba(36, 23, 16, 0.85);
+  --bg-card-hover: rgba(50, 31, 22, 0.95);
+  --bg-glass: rgba(22, 13, 8, 0.78);
+  --bg-input: #1A100A;
+  --bg-code: #0D0704;
+
+  --border-color: rgba(140, 95, 65, 0.22);
+  --border-focus: #E08D46;
+  --border-highlight: rgba(224, 141, 70, 0.45);
+
+  --text-primary: #FDFBF7;
+  --text-secondary: #D9C8BA;
+  --text-muted: #9E8574;
+  --text-inverse: #140C07;
+
+  --accent-primary: #E08D46;
+  --accent-secondary: #C86D3B;
+  --accent-hover: #F29E58;
+  --accent-active: #B85C25;
+  --accent-gold: #F5A742;
+  --accent-glow: rgba(224, 141, 70, 0.28);
+  --accent-glow-strong: rgba(245, 167, 66, 0.45);
+  --accent-gradient: linear-gradient(135deg, #E08D46 0%, #F5A742 50%, #C86D3B 100%);
+  --accent-gradient-subtle: linear-gradient(135deg, rgba(224, 141, 70, 0.15) 0%, rgba(245, 167, 66, 0.05) 100%);
+
+  --badge-bg: rgba(224, 141, 70, 0.16);
+  --badge-text: #F5A742;
+  --badge-border: rgba(224, 141, 70, 0.32);
+
+  --success: #38A169;
+  --success-bg: rgba(56, 161, 105, 0.15);
+  --warning: #DD6B20;
+  --warning-bg: rgba(221, 107, 32, 0.15);
+  --danger: #E53E3E;
+  --danger-bg: rgba(229, 62, 62, 0.15);
+  --info: #3182CE;
+  --info-bg: rgba(49, 130, 206, 0.15);
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(140, 95, 65, 0.15);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(224, 141, 70, 0.2);
+  --shadow-glow: 0 0 30px rgba(224, 141, 70, 0.25);
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --header-height: 72px;
+  --max-width: 1280px;
+}
+
+/* LIGHT THEME - Warm Roasted Cafe Au Lait */
+[data-theme="light"] {
+  --bg-primary: #F8F5F0;
+  --bg-secondary: #EFE8DF;
+  --bg-tertiary: #E3D9CC;
+  --bg-elevated: #D9CCBD;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #FFFFFF;
+  --bg-glass: rgba(248, 245, 240, 0.88);
+  --bg-input: #FFFFFF;
+  --bg-code: #20130C;
+
+  --border-color: rgba(120, 80, 50, 0.18);
+  --border-focus: #B85C25;
+  --border-highlight: rgba(184, 92, 37, 0.4);
+
+  --text-primary: #23150D;
+  --text-secondary: #573F30;
+  --text-muted: #846B59;
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: #B85C25;
+  --accent-secondary: #934213;
+  --accent-hover: #D46F33;
+  --accent-active: #7A350E;
+  --accent-gold: #C05621;
+  --accent-glow: rgba(184, 92, 37, 0.22);
+  --accent-glow-strong: rgba(192, 86, 33, 0.38);
+  --accent-gradient: linear-gradient(135deg, #B85C25 0%, #D46F33 50%, #8E3A0E 100%);
+  --accent-gradient-subtle: linear-gradient(135deg, rgba(184, 92, 37, 0.12) 0%, rgba(212, 111, 51, 0.04) 100%);
+
+  --badge-bg: rgba(184, 92, 37, 0.12);
+  --badge-text: #934213;
+  --badge-border: rgba(184, 92, 37, 0.28);
+
+  --shadow-sm: 0 2px 6px rgba(60, 35, 20, 0.06);
+  --shadow-md: 0 8px 24px rgba(60, 35, 20, 0.09), 0 0 0 1px rgba(120, 80, 50, 0.08);
+  --shadow-lg: 0 16px 36px rgba(60, 35, 20, 0.12), 0 0 0 1px rgba(184, 92, 37, 0.18);
+  --shadow-glow: 0 0 25px rgba(184, 92, 37, 0.18);
+}
+
+/* BASE RESETS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(224, 141, 70, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(200, 109, 59, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.45rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* LAYOUT CONTAINER */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+main#app-root {
+  flex: 1 0 auto;
+  padding-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* AMBIENT GLOW EFFECTS */
+.ambient-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.ambient-glow-amber {
+  background: radial-gradient(circle, rgba(224, 141, 70, 0.25) 0%, rgba(245, 167, 66, 0.05) 70%, transparent 100%);
+}
+
+.ambient-glow-brown {
+  background: radial-gradient(circle, rgba(140, 70, 30, 0.3) 0%, rgba(80, 40, 15, 0.08) 70%, transparent 100%);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-primary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* SELECTION */
+::selection {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
